@@ -1,0 +1,13 @@
+#pragma once
+#include "src/transform.h"
+
+
+            typedef __base_::__transform_       transform_t;
+
+
+template <> struct type_value<transform_t>      { enum { value = typ::TRANSFORM }; };
+template <> struct type_value<transform>        { enum { value = typ::TRANSFORM_CLASS }; };
+
+
+template <> struct type<typ::TRANSFORM>         { typedef node_t ptype; typedef transform_t rtype; };
+template <> struct type<typ::TRANSFORM_CLASS>   { typedef node_t ptype; typedef transform rtype; };

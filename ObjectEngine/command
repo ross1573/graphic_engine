@@ -1,0 +1,6 @@
+#pragma once
+#include "src/command.h"
+#include "src/command_queue.h"
+
+
+typedef __base_::__command_         command_t;

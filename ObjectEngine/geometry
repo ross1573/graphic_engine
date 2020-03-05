@@ -1,0 +1,26 @@
+#pragma once
+#include "../ObjectEngine/type"
+#include "src/geometry.h"
+#include "src/geometry_function.h"
+
+
+                        typedef __base_::__geometry_                        geometry_t;
+                        typedef __base_::__dimension_<2>                    dim2_t;
+                        typedef __base_::__dimension_<3>                    dim3_t;
+                        typedef __base_::__texture_<0>                      ntexture_t;
+                        typedef __base_::__texture_<1>                      texture_t;
+
+
+template <>             struct type_value<dim2_t>                           { enum { value = typ::GEOMETRY_2D }; };
+template <>             struct type_value<dim3_t>                           { enum { value = typ::GEOMETRY_3D }; };
+template <>             struct type_value<ntexture_t>                       { enum { value = typ::GEOMETRY_NTEXTURE }; };
+template <>             struct type_value<texture_t>                        { enum { value = typ::GEOMETRY_TEXTURE }; };
+
+template <typename _dT, typename _tT> struct type_value<vertex<_dT, _tT>>   { enum { value = typ::GEOMETRY | type_value<_dT>::value | type_value<_tT>::value }; };
+template <typename _vT> struct type_value<geometry<_vT>>                    { enum { value = typ::GEOMETRY_CLASS | type_value<_vT>::value }; };
+
+
+template <> struct type<type_value<geometry<vertex<dim2_t, ntexture_t>>>::value> { typedef node_t ptype; typedef geometry<vertex<dim2_t, ntexture_t>> rtype; };
+template <> struct type<type_value<geometry<vertex<dim2_t, texture_t>>>::value>  { typedef node_t ptype; typedef geometry<vertex<dim2_t, texture_t>> rtype;  };
+template <> struct type<type_value<geometry<vertex<dim3_t, ntexture_t>>>::value> { typedef node_t ptype; typedef geometry<vertex<dim3_t, ntexture_t>> rtype; };
+template <> struct type<type_value<geometry<vertex<dim3_t, texture_t>>>::value>  { typedef node_t ptype; typedef geometry<vertex<dim3_t, texture_t>> rtype;  };

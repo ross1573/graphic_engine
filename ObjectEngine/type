@@ -1,0 +1,172 @@
+// ============================================================================================ //
+// TYPE_CORE                                            0000 0000 0000 0000 0000 0000 0000 0000 //
+// TYPE_GRAPHIC                                         0001 0000 0000 0000 0000 0000 0000 0000 //
+// TYPE_OBJECT                                          0010 0000 0000 0000 0000 0000 0000 0000 //
+// TYPE_PHYSICS                                         0100 0000 0000 0000 0000 0000 0000 0000 //
+// ============================================================================================ //
+//                                                      CPOG .... .... .... .... .... .... .... //
+//                                         CORE CLASS : C                                       //
+//                                            PHYSICS :  P                                      //
+//                                             OBJECT :   O                                     //
+//                                            GRAPHIC :    G                                    //
+// ============================================================================================ //
+// TYPE_GRAPHIC_WINDOW                                  0001 0001 0000 0000 0000 0000 0000 0000 //
+// TYPE_GRAPHIC_WINDOW_SETTING                          0001 0001 0000 0000 0000 0000 0000 0001 //
+// TYPE_GRAPHIC_WINDOW_CLASS                            1001 0001 0000 0000 0000 0000 0000 0000 //
+// TYPE_GRAPHIC_SHADER                                  0001 0010 0000 0000 0000 0000 0000 0000 //
+// TYPE_GRAPHIC_SHADER_CLASS                            1001 0010 0000 0000 0000 0000 0000 0000 //
+// TYPE_GRAPHIC_RENDER                                  0001 0100 0000 0000 0000 0000 0000 0000 //
+// TYPE_GRAPHIC_RENDER_CLASS                            1001 0100 0000 0000 0000 0000 0000 0000 //
+// ============================================================================================ //
+//                                                      CPOG .RSW .... .... .... .... .... ...T //
+//                                         CORE CLASS : C                                       //
+//                                            PHYSICS :  P                                      //
+//                                             OBJECT :   O                                     //
+//                                            GRAPHIC :    G                                    //
+//                                             RENDER :       R                                 //
+//                                             SHADER :        S                                //
+//                                             WINDOW :         W                               //
+//                                            SETTING :                                       T //
+// ============================================================================================ //
+// TYPE_OBJECT_GEOMETRY                                 0010 0001 0000 0000 0000 0000 0000 0000 //
+// TYPE_OBJECT_GEOMETRY_CLASS                           1010 0001 0000 0000 0000 0000 0000 0000 //
+// TYPE_OBJECT_GEOMETRY_VERTEX                          0010 0001 0000 0001 0000 0000 0000 0000 //
+// TYPE_OBJECT_GEOMETRY_TEXTURE                         0010 0001 0010 0000 0000 0000 0000 0000 //
+// TYPE_OBJECT_GEOMETRY_NTEXTURE                        0010 0001 0001 0000 0000 0000 0000 0000 //
+// TYPE_OBJECT_GEOMETRY_2D                              0010 0001 0100 0000 0000 0000 0000 0000 //
+// TYPE_OBJECT_GEOMETRY_3D                              0010 0001 1000 0000 0000 0000 0000 0000 //
+// ============================================================================================ //
+//                                                      CPOG ...S 32TN ...V .... .... .... .... //
+//                                         CORE CLASS : C                                       //
+//                                            PHYSICS :  P                                      //
+//                                             OBJECT :   O                                     //
+//                                            GRAPHIC :    G                                    //
+//                                          GEOMETRIC :         S                               //
+//                                                 3D :           3                             //
+//                                                 2D :            2                            //
+//                                            TEXTURE :             T                           //
+//                                         NONTEXTURE :              N                          //
+//                                             VERTEX :                   V                     //
+// ============================================================================================ //
+// TYPE_OBJECT_ITERATOR                                 0010 0001 0000 0000 0000 0000 0000 0000 //
+// TYPE_OBJECT_ITERATOR_MAP                             0010 0001 0001 0000 0000 0000 0000 0000 //
+// TYPE_OBJECT_ITERATOR_BOOL                            0010 0001 0000 0000 0000 0000 0000 0001 //
+// TYPE_OBJECT_ITERATOR_CHAR                            0010 0001 0000 0000 0000 0000 0000 0010 //
+// TYPE_OBJECT_ITERATOR_SHORT                           0010 0001 0000 0000 0000 0000 0000 0100 //
+// TYPE_OBJECT_ITERATOR_INT                             0010 0001 0000 0000 0000 0000 0000 1000 //
+// TYPE_OBJECT_ITERATOR_LONG                            0010 0001 0000 0010 0000 0000 0000 0000 //
+// TYPE_OBJECT_ITERATOR_LLONG                           0010 0001 0000 0100 0000 0000 0000 0000 //
+// TYPE_OBJECT_ITERATOR_FLOAT                           0010 0001 0000 0000 0000 0000 0001 0000 //
+// TYPE_OBJECT_ITERATOR_DOUBLE                          0010 0001 0000 0000 0000 0000 0010 0000 //
+// ============================================================================================ //
+//                                                      CPOG ...I ...M .LLU .... .... ..DF ISCB //
+//                                         CORE CLASS : C                                       //
+//                                            PHYSICS :  P                                      //
+//                                             OBJECT :   O                                     //
+//                                            GRAPHIC :    G                                    //
+//                                           ITERATOR :         I                               //
+//                                                MAP :              M                          //
+//                                               LONG :                 L                       //
+//                                          LONG LONG :                  L                      //
+//                                           UNSIGNED :                   U                     //
+//                                             DOUBLE :                                 D       //
+//                                              FLOAT :                                  F      //
+//                                            INTEGER :                                    I    //
+//                                              SHORT :                                     S   //
+//                                               CHAR :                                      C  //
+//                                               BOOL :                                       B //
+// ============================================================================================ //
+// TYPE_PHYSICS_TRANSFORM                               0100 0010 0000 0000 0000 0000 0000 0000 //
+// TYPE_PHYSICS_TRANSFORM_CLASS                         1100 0010 0000 0000 0000 0000 0000 0000 //
+// TYPE_PHYSICS_COLLISION                               0100 0100 0000 0000 0000 0000 0000 0000 //
+// TYPE_PHYSICS_COLLISION_CLASS                         1100 0100 0000 0000 0000 0000 0000 0000 //
+// TYPE_PHYSICS_HITBOX                                  0100 0001 0000 0000 0000 0000 0000 0000 //
+// TYPE_PHYSICS_HITBOX_POLYGON                          0100 0001 0000 0000 0000 0000 0000 0001 //
+// TYPE_PHYSICS_HITBOX_CIRCLE                           0100 0001 0000 0000 0000 0000 0000 0010 //
+// TYPE_PHYSICS_HITBOX_CUBE                             0100 0001 0000 0000 0000 0000 0000 0100 //
+// TYPE_PHYSICS_HITBOX_PYRAMID                          0100 0001 0000 0000 0000 0000 0000 1000 //
+// TYPE_PHYSICS_HITBOX_PRISM                            0100 0001 0000 0000 0000 0000 0001 0000 //
+// TYPE_PHYSICS_HITBOX_CYLINDER                         0100 0001 0000 0000 0000 0000 0010 0000 //
+// TYPE_PHYSICS_HITBOX_CONE                             0100 0001 0000 0000 0000 0000 0100 0000 //
+// TYPE_PHYSICS_HITBOX_SPHERE                           0100 0001 0000 0000 0000 0000 1000 0000 //
+// ============================================================================================ //
+//                                                      CPOG ...H .... .... .... .... SNDI YBCL //
+//                                         CORE CLASS : C                                       //
+//                                            PHYSICS :  P                                      //
+//                                             OBJECT :   O                                     //
+//                                            GRAPHIC :    G                                    //
+//                                             HITBOX :         H                               //
+//                                             SPHERE :                               S         //
+//                                               CONE :                                N        //
+//                                           CYLINDER :                                 D       //
+//                                              PRISM :                                  I      //
+//                                            PYRAMID :                                    Y    //
+//                                               CUBE :                                     B   //
+//                                             CIRCLE :                                      C  //
+//                                            POLYGON :                                       L //
+// ============================================================================================ //
+// TYPE_UNKNOWN                                         1111 1111 1111 1111 1111 1111 1111 1111 //
+// ============================================================================================ //
+
+#pragma once
+#include "src/type.h"
+#include "src/type_traits.h"
+#include "src/math.h"
+
+
+namespace typ {
+
+
+    constexpr int UNKNOWN                                       = 0xFFFFFFFF;
+
+
+    constexpr int CORE                                          = 0x00000000;
+
+
+    constexpr int GPH                                           = 0x10000000;
+    constexpr int WINDOW                                        = 0x11000000;
+    constexpr int WINDOW_SETTING                                = 0x11000001;
+    constexpr int WINDOW_CLASS                                  = 0x91000000;
+    constexpr int SHADER                                        = 0x12000000;
+    constexpr int SHADER_CLASS                                  = 0x92000000;
+    constexpr int RENDER                                        = 0x14000000;
+    constexpr int RENDER_CLASS                                  = 0x94000000;
+
+
+    constexpr int OBJ                                           = 0x20000000;
+    constexpr int GEOMETRY                                      = 0x21000000;
+    constexpr int GEOMETRY_CLASS                                = 0xA1000000;
+    constexpr int GEOMETRY_VERTEX                               = 0x21010000;
+    constexpr int GEOMETRY_NTEXTURE                             = 0x21100000;
+    constexpr int GEOMETRY_TEXTURE                              = 0x21200000;
+    constexpr int GEOMETRY_2D                                   = 0x21400000;
+    constexpr int GEOMETRY_3D                                   = 0x21800000;
+
+    constexpr int ITERATOR                                      = 0x21000000;
+    constexpr int ITERATOR_MAP                                  = 0x21100000;
+    constexpr int ITERATOR_BOOL                                 = 0x21000001;
+    constexpr int ITERATOR_CHAR                                 = 0x21000002;
+    constexpr int ITERATOR_SHORT                                = 0x21000004;
+    constexpr int ITERATOR_INT                                  = 0x21000008;
+    constexpr int ITERATOR_FLOAT                                = 0x21000010;
+    constexpr int ITERATOR_DOUBLE                               = 0x21000020;
+    constexpr int ITERATOR_UNSIGNED                             = 0x21010000;
+    constexpr int ITERATOR_LONG                                 = 0x21020000;
+    constexpr int ITERATOR_LONGLONG                             = 0x21040000;
+    
+
+    constexpr int PHY                                           = 0x40000000;
+    constexpr int TRANSFORM                                     = 0x42000000;
+    constexpr int TRANSFORM_CLASS                               = 0xC2000000;
+    constexpr int COLLISION                                     = 0x44000000;
+    constexpr int COLLISION_CLASS                               = 0xC4000000;
+    constexpr int HITBOX                                        = 0x41000000;
+    constexpr int HITBOX_POLYGON                                = 0x41000001;
+    constexpr int HITBOX_CIRCLE                                 = 0x41000002;
+    constexpr int HITBOX_CUBE                                   = 0x41000004;
+    constexpr int HITBOX_PYRAMID                                = 0x41000008;
+    constexpr int HITBOX_PRISM                                  = 0x41000010;
+    constexpr int HITBOX_CYLINDER                               = 0x41000020;
+    constexpr int HITBOX_CONE                                   = 0x41000040;
+    constexpr int HITBOX_SPHERE                                 = 0x41000080;
+}

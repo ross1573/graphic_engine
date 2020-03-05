@@ -1,0 +1,13 @@
+#pragma once
+#include "src/collision.h"
+
+
+            typedef __base_::__collision_       collision_t;
+
+
+template <> struct type_value<collision_t>      { enum { value = typ::COLLISION }; };
+template <> struct type_value<collision>        { enum { value = typ::COLLISION_CLASS }; };
+
+
+template <> struct type<typ::COLLISION>         { typedef node_t ptype; typedef collision_t rtype; };
+template <> struct type<typ::COLLISION_CLASS>   { typedef node_t ptype; typedef collision rtype; };

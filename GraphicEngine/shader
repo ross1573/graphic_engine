@@ -1,0 +1,23 @@
+#pragma once
+#include "../ObjectEngine/type"
+#include "src/opengl_shader.h"
+
+
+#ifdef API_OPENGL
+using graphic_shader                    = shader;
+#endif
+
+
+#ifdef API_NONE
+using graphic_shader                    = std::nullptr_t;
+#endif
+
+
+            typedef __base_::__shader_              shader_t;
+
+
+template <> struct type_value<shader_t>         { enum { value = typ::SHADER }; };
+template <> struct type_value<graphic_shader>   { enum { value = typ::SHADER_CLASS }; };
+
+template <> struct type<typ::SHADER>            { typedef node_t ptype; typedef shader_t rtype; };
+template <> struct type<typ::SHADER_CLASS>      { typedef node_t ptype; typedef graphic_shader rtype; };

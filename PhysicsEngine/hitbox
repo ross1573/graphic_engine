@@ -1,0 +1,29 @@
+#pragma once
+#include "../ObjectEngine/type"
+#include "src/hitbox.h"
+#include "src/surface.h"
+
+        
+            using hitbox_t                              = __base_::__hitbox_;
+
+
+template <> struct type_value<hitbox_t>                 { enum { value = typ::HITBOX }; };
+template <> struct type_value<hitbox_polygon>           { enum { value = typ::HITBOX_POLYGON }; };
+template <> struct type_value<hitbox_circle>            { enum { value = typ::HITBOX_CIRCLE }; };
+template <> struct type_value<hitbox_cube>              { enum { value = typ::HITBOX_CUBE }; };
+template <> struct type_value<hitbox_pyramid>           { enum { value = typ::HITBOX_PYRAMID }; };
+template <> struct type_value<hitbox_prism>             { enum { value = typ::HITBOX_PRISM }; };
+template <> struct type_value<hitbox_cylinder>          { enum { value = typ::HITBOX_CYLINDER }; };
+template <> struct type_value<hitbox_cone>              { enum { value = typ::HITBOX_CONE }; };
+template <> struct type_value<hitbox_sphere>            { enum { value = typ::HITBOX_SPHERE }; };
+
+
+template <> struct type<typ::HITBOX>                    { typedef node_t ptype; typedef hitbox_t          rtype; };
+template <> struct type<typ::HITBOX_POLYGON>            { typedef node_t ptype; typedef hitbox_polygon    rtype; };
+template <> struct type<typ::HITBOX_CIRCLE>             { typedef node_t ptype; typedef hitbox_circle     rtype; };
+template <> struct type<typ::HITBOX_CUBE>               { typedef node_t ptype; typedef hitbox_cube       rtype; };
+template <> struct type<typ::HITBOX_PYRAMID>            { typedef node_t ptype; typedef hitbox_pyramid    rtype; };
+template <> struct type<typ::HITBOX_PRISM>              { typedef node_t ptype; typedef hitbox_prism      rtype; };
+template <> struct type<typ::HITBOX_CYLINDER>           { typedef node_t ptype; typedef hitbox_cylinder   rtype; };
+template <> struct type<typ::HITBOX_CONE>               { typedef node_t ptype; typedef hitbox_cone       rtype; };
+template <> struct type<typ::HITBOX_SPHERE>             { typedef node_t ptype; typedef hitbox_sphere     rtype; };

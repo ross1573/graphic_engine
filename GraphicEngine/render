@@ -1,0 +1,23 @@
+#pragma once
+#include "../ObjectEngine/type"
+#include "src/opengl_render.h"
+
+
+#ifdef API_OPENGL
+using graphic_render                    = render;
+#endif
+
+
+#ifdef API_NONE
+using graphic_render                    = std::nullptr;
+#endif
+
+
+            typedef __base_::__render_              render_t;
+
+
+template <> struct type_value<render_t>         { enum { value = typ::RENDER }; };
+template <> struct type_value<graphic_render>   { enum { value = typ::RENDER_CLASS }; };
+
+template <> struct type<typ::RENDER>            { typedef node_t ptype; typedef render_t rtype; };
+template <> struct type<typ::RENDER_CLASS>      { typedef node_t ptype; typedef graphic_render rtype; };

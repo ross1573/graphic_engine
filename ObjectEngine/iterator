@@ -1,0 +1,51 @@
+#pragma once
+#include "../ObjectEngine/type"
+#include "src/iterator_map.h"
+
+
+                        typedef __base_::__iterator_                iterator_t;
+                        typedef iterator_map<bool>                  iterator_map_bool;
+                        typedef iterator_map<char>                  iterator_map_char;
+                        typedef iterator_map<short>                 iterator_map_short;
+                        typedef iterator_map<unsigned short>        iterator_map_ushort;
+                        typedef iterator_map<int>                   iterator_map_int;
+                        typedef iterator_map<unsigned>              iterator_map_uint;
+                        typedef iterator_map<long>                  iterator_map_long;
+                        typedef iterator_map<unsigned long>         iterator_map_ulong;
+                        typedef iterator_map<long long>             iterator_map_llong;
+                        typedef iterator_map<unsigned long long>    iterator_map_ullong;
+                        typedef iterator_map<float>                 iterator_map_float;
+                        typedef iterator_map<double>                iterator_map_double;
+                        typedef iterator_map<long double>           iterator_map_ldouble;
+
+
+template <typename _kT> struct type_value<__base_::__iterator_typed<_kT>>
+    { enum { value = typ::ITERATOR | type_value<_kT>::value }; };
+template <>             struct type_value<__base_::__iterator_typed<bool>>
+    { enum { value = typ::ITERATOR_BOOL }; };
+template <>             struct type_value<__base_::__iterator_typed<char>>
+    { enum { value = typ::ITERATOR_CHAR }; };
+template <>             struct type_value<__base_::__iterator_typed<short>>
+    { enum { value = typ::ITERATOR_SHORT }; };
+template <>             struct type_value<__base_::__iterator_typed<unsigned short>>
+    { enum { value = typ::ITERATOR_SHORT | typ::ITERATOR_UNSIGNED }; };
+template <>             struct type_value<__base_::__iterator_typed<int>>
+    { enum { value = typ::ITERATOR_INT }; };
+template <>             struct type_value<__base_::__iterator_typed<unsigned>>
+    { enum { value = typ::ITERATOR_INT | typ::ITERATOR_UNSIGNED }; };
+template <>             struct type_value<__base_::__iterator_typed<long>>
+    { enum { value = typ::ITERATOR_LONG | typ::ITERATOR_INT }; };
+template <>             struct type_value<__base_::__iterator_typed<unsigned long>>
+    { enum { value = typ::ITERATOR_LONG | typ::ITERATOR_UNSIGNED | typ::ITERATOR_INT }; };
+template <>             struct type_value<__base_::__iterator_typed<long long>>
+    { enum { value = typ::ITERATOR_LONGLONG | typ::ITERATOR_INT }; };
+template <>             struct type_value<__base_::__iterator_typed<unsigned long long>>
+    { enum { value = typ::ITERATOR_LONGLONG | typ::ITERATOR_UNSIGNED | typ::ITERATOR_INT }; };
+template <>             struct type_value<__base_::__iterator_typed<float>>
+    { enum { value = typ::ITERATOR_FLOAT }; };
+template <>             struct type_value<__base_::__iterator_typed<double>>
+    { enum { value = typ::ITERATOR_DOUBLE }; };
+template <>             struct type_value<__base_::__iterator_typed<long double>>
+    { enum { value = typ::ITERATOR_DOUBLE | typ::ITERATOR_LONG }; };
+template <typename _kT> struct type_value<iterator_map<_kT>>
+    { enum { value = typ::ITERATOR_MAP | type_value<__base_::__iterator_typed<_kT>>::value }; };

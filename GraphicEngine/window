@@ -1,0 +1,19 @@
+#pragma once
+#include "../ObjectEngine/type"
+#include "src/opengl_window.h"
+
+
+#ifdef API_OPENGL
+using window_settings                   = window_settings;
+using graphic_window                    = window;
+#endif
+
+
+#ifdef API_NONE
+using window_settings                   = std::nullptr_t;
+using graphic_window                    = std::nullptr_t;
+#endif
+
+
+template <> struct type_value<window_settings>  { enum { value = typ::WINDOW_SETTING }; };
+template <> struct type_value<graphic_window>   { enum { value = typ::WINDOW_CLASS }; };
